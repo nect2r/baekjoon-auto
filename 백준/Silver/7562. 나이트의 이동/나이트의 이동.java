@@ -65,6 +65,11 @@ public class Main {
             while(!q.isEmpty()) {
                 Node node = q.poll();
 
+                if (node.x == ex && node.y == ey) {
+                    sb.append(dist[ey][ex]).append("\n");
+                    break;
+                }
+
                 //위치 이동
                 for (int j = 0; j < 8; j++) {
 
@@ -85,7 +90,6 @@ public class Main {
                     dist[my][mx] = dist[node.y][node.x] + 1;
                 }
             }
-            sb.append(dist[ey][ex]).append("\n");
         }
         System.out.println(sb);
     }
