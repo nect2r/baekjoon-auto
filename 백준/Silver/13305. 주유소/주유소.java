@@ -10,17 +10,17 @@ class Main {
         StringTokenizer st;
         int N = Integer.parseInt(br.readLine());
 
-        int[] road = new int[N];
-        int[] cost = new int[N];
+        long[] road = new long[N];
+        long[] cost = new long[N];
 
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N - 1; i++) {
-            road[i] = Integer.parseInt(st.nextToken());
+            road[i] = Long.parseLong(st.nextToken());
         }
 
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
-            cost[i] = Integer.parseInt(st.nextToken());
+            cost[i] = Long.parseLong(st.nextToken());
         }
 
         long result = 0;
