@@ -26,32 +26,22 @@ class Main {
 
         getPi(target);
 
-        int start = 0;
-        int end = target.length();
         int lth = line.length();
-
         int result = 0;
 
-        while (start + end <= lth) {
-            boolean isCheck = true;
-
-            for (int i = 0; i < end; i++) {
-                if (line.charAt(start + i) != target.charAt(i)) {
-                    if (i == 0) {
-                        start++;
-                    } else {
-                        int next = pi[i - 1] == 0 ? 1 : pi[i - 1];
-                        start += next;
-                    }
-
-                    isCheck = false;
-                    break;
-                }
+        int j = 0;
+        for (int i = 0; i < lth; i++) {
+            while (j > 0 && target.charAt(j) != line.charAt(i)) {
+                j = pi[j - 1];
             }
 
-            if (isCheck) {
-                result++;
-                start += 2;
+            if (target.charAt(j) == line.charAt(i)) {
+                if (j == target.length() - 1) {
+                    result++;
+                    j = pi[j];
+                } else {
+                    j++;
+                }
             }
         }
 
