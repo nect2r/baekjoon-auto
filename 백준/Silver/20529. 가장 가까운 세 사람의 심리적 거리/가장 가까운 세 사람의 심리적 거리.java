@@ -30,7 +30,14 @@ class Main {
 
         for (int cnt = 0; cnt < count; cnt++) {
             int N = Integer.parseInt(br.readLine());
+
             StringTokenizer st = new StringTokenizer(br.readLine());
+
+            //대박 비둘기집 원리를 여기서 쓰는거구나
+            if (N > 32) {
+                sb.append(0).append("\n");
+                continue;
+            }
 
             List<Integer> list = new ArrayList<>();
 
