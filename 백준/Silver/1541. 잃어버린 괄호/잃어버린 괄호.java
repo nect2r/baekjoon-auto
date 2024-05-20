@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
  */
 class Main {
 
-    static int[] items = new int[50];
+    static int[] items = new int[26];
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
